@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './App.css'; // Import the CSS file for the app
+import './App.css';
 
 // MovieCard component
 const MovieCard = ({ movie }) => {
@@ -119,6 +119,7 @@ const App = () => {
   const [newMovie, setNewMovie] = useState({
     title: '',
     description: '',
+    posterURL: '',
     rating: 0,
   });
 
@@ -135,6 +136,7 @@ const App = () => {
     setNewMovie({
       title: '',
       description: '',
+      posterURL: '',
       rating: 0,
     });
   };
@@ -160,6 +162,14 @@ const App = () => {
           name="description"
           placeholder="Description"
           value={newMovie.description}
+          onChange={handleMovieChange}
+          required
+        />
+        <input
+          type="text"
+          name="posterURL"
+          placeholder="Poster URL"
+          value={newMovie.posterURL}
           onChange={handleMovieChange}
           required
         />
